@@ -4,8 +4,8 @@ import { RescheduleModal } from './RescheduleModal';
 import { NotificationsModal } from './NotificationsModal';
 import { toast, Toaster } from 'sonner';
 import { Bell } from 'lucide-react';
-import {Appointment} from "../Dashboard";
-import {AppointmentCard} from "../components/AppointmentCard";
+import {Appointment} from "../specialist/Dashboard";
+import {AppointmentCard} from "../specialist/components/AppointmentCard";
 
 export default function App() {
     const [appointments, setAppointments] = useState<Appointment[]>([
