@@ -14,7 +14,7 @@ function Home() {
 
 export default function App() {
     return (
-        <Router>
+        <Router basename="/oncoconnect-prototype">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/specialist" element={<CalendarDay />} />
