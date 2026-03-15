@@ -1,4 +1,5 @@
 import { Calendar, Clock, X, RefreshCw } from 'lucide-react';
+import {PatientAppointment} from "../PatientView";
 
 export interface Appointment {
     id: string;
@@ -9,7 +10,7 @@ export interface Appointment {
 }
 
 interface AppointmentCardProps {
-    appointment: Appointment;
+    appointment: PatientAppointment;
     onCancel: (id: string) => void;
     onReschedule: (id: string) => void;
 }
@@ -26,7 +27,7 @@ export function AppointmentCard({ appointment, onCancel, onReschedule }: Appoint
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                         <Clock className="w-4 h-4 text-sky-400" />
-                        <span>{appointment.time} • {appointment.duration}</span>
+                        <span>{appointment.time} • {appointment.duration} min</span>
                     </div>
                 </div>
             </div>

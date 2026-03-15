@@ -129,6 +129,11 @@ export function RescheduleModal({ isOpen, onClose, onConfirm, appointmentDate }:
                                     </label>
                                 );
                             })}
+                            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+                                <p className="text-sm text-blue-800">
+                                    If there are no suitable time slots, let us know your availability and we will check.
+                                </p>
+                            </div>
                         </div>
                     )}
 

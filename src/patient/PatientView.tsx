@@ -4,45 +4,53 @@ import { RescheduleModal } from './RescheduleModal';
 import { NotificationsModal } from './NotificationsModal';
 import { toast, Toaster } from 'sonner';
 import { Bell } from 'lucide-react';
-import {Appointment} from "../specialist/Dashboard";
-import {AppointmentCard} from "../specialist/components/AppointmentCard";
+import {AppointmentCard} from "./components/AppointmentCard";
+import Logo from '../assets/logo_white.svg';
+
+export interface PatientAppointment {
+    id: string;
+    date: string;
+    time: string;
+    treatment: string;
+    duration: number;
+}
 
 export default function App() {
-    const [appointments, setAppointments] = useState<Appointment[]>([
+    const [appointments, setAppointments] = useState<PatientAppointment[]>([
         {
             id: '1',
             date: 'Mon, Jan 20',
             time: '9:00 AM',
-            treatment: 'Physical Therapy Session',
-            duration: '15 min'
+            treatment: 'Behandlung (Linac Grün)',
+            duration: 15
         },
         {
             id: '2',
             date: 'Tue, Jan 21',
             time: '2:30 PM',
-            treatment: 'Physical Therapy Session',
-            duration: '15 min'
+            treatment: 'Behandlung (Linac Grün)',
+            duration: 15
         },
         {
             id: '3',
             date: 'Wed, Jan 22',
             time: '11:15 AM',
-            treatment: 'Physical Therapy Session',
-            duration: '15 min'
+            treatment: 'Behandlung (Linac Grün)',
+            duration: 15
         },
         {
             id: '4',
             date: 'Thu, Jan 23',
             time: '4:00 PM',
-            treatment: 'Physical Therapy Session',
-            duration: '15 min'
+            treatment: 'Behandlung (Linac Blau)',
+            duration: 15
         },
         {
             id: '5',
             date: 'Fri, Jan 24',
             time: '10:30 AM',
-            treatment: 'Physical Therapy Session',
-            duration: '15 min'
+            treatment: 'Behandlung (Linac Blau)',
+            duration: 15
         }
     ]);
 
@@ -94,9 +102,10 @@ export default function App() {
                 <div className="bg-gradient-to-r from-sky-400 to-sky-500 px-6 py-8 text-white">
                     <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
-                            <h1 className="text-2xl mb-1">My Appointments</h1>
+                            <img src={Logo} style={{height: '20px'}}/>
+                            <h1 className="text-2xl mb-1">OncoConnect</h1>
                             <p className="text-sky-100 text-sm">
-                                {appointments.length} upcoming {appointments.length === 1 ? 'session' : 'sessions'}
+                                {appointments.length} anstehende Termine
                             </p>
                         </div>
                         <div className="flex items-center gap-3">

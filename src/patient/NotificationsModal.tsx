@@ -21,7 +21,7 @@ export function NotificationsModal({ isOpen, onClose }: NotificationsModalProps)
         {
             id: '1',
             type: 'scheduled',
-            message: 'Your Physical Therapy Session has been scheduled',
+            message: 'A new appointment has has been scheduled',
             date: 'Fri, Jan 24',
             time: '10:30 AM',
             timestamp: '2 hours ago'
